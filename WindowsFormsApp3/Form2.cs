@@ -26,7 +26,6 @@ namespace WindowsFormsApp3
             graphics.DrawEllipse(pen, 50, 50, 60, 60);
             graphics.DrawLine(new Pen(Color.Red, 10), new Point(1, 1), new Point(100, 100));
             graphics.DrawRectangle(pen, 0, 0, 50, 50);
-            graphics.DrawPolygon(pen);
         }
     }
 }
