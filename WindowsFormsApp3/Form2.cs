@@ -27,5 +27,11 @@ namespace WindowsFormsApp3
             graphics.DrawLine(new Pen(Color.Red, 10), new Point(1, 1), new Point(100, 100));
             graphics.DrawRectangle(pen, 0, 0, 50, 50);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Graphics g = panel1.CreateGraphics();
+            g.Clear(Color.White);
+        }
     }
 }
