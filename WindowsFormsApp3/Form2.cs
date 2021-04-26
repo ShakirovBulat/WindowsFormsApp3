@@ -16,17 +16,9 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        
+        private void Form2_Load(object sender, EventArgs e)
         {
-            pictureBox1.Visible = false;
-            pictureBox2.Visible = true;
         }
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            pictureBox1.Visible = true;
-            pictureBox2.Visible = false;
-        }
-
-
     }
 }
