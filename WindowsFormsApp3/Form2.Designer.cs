@@ -59,7 +59,8 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Line",
             "Ellipse",
-            "Rectangle"});
+            "Rectangle",
+            "Triangle"});
             this.comboBox1.Location = new System.Drawing.Point(121, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 21);

@@ -24,9 +24,9 @@ namespace WindowsFormsApp3
             var graphics = panel1.CreateGraphics();
             var pen = new Pen(Color.Blue, 4);
             string a = comboBox1.Text;
-            if (a == "line")
+            if (a == "Line")
             {
-                graphics.DrawLine(new Pen(Color.Red, 10), new Point(1, 1), new Point(100, 100));
+                graphics.DrawLine(pen, new Point(1, 1), new Point(100, 100));
             }
             if (a == "Ellipse")
             {
@@ -35,6 +35,14 @@ namespace WindowsFormsApp3
             if (a == "Rectangle")
             {
                 graphics.DrawRectangle(pen, 0, 0, 50, 50);
+            }
+            if (a == "Triangle")
+            {
+                Point point1 = new Point(50, 50);
+                Point point2 = new Point(300, 90);
+                Point point3 = new Point(100, 200);
+
+                graphics.DrawLines(pen, new[] { point1, point2, point3, point1 });
             }
         }
 
