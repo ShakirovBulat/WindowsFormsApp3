@@ -23,20 +23,20 @@ namespace WindowsFormsApp3
         {
             var graphics = panel1.CreateGraphics();
             var pen = new Pen(Color.Blue, 4);
-            string a = comboBox1.Text;
-            if (a == "Line")
+            string figure = comboBox1.Text;
+            if (figure == "Line")
             {
                 graphics.DrawLine(pen, new Point(1, 1), new Point(100, 100));
             }
-            if (a == "Ellipse")
+            if (figure == "Ellipse")
             {
                 graphics.DrawEllipse(pen, 50, 50, 60, 60);
             }
-            if (a == "Rectangle")
+            if (figure == "Rectangle")
             {
                 graphics.DrawRectangle(pen, 0, 0, 50, 50);
             }
-            if (a == "Triangle")
+            if (figure == "Triangle")
             {
                 Point point1 = new Point(50, 50);
                 Point point2 = new Point(300, 90);
