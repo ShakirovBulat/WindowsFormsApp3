@@ -21,7 +21,7 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var graphics = panel1.CreateGraphics();
+            var graphics = pictureBox1.CreateGraphics();
             var pen = new Pen(Color.Blue, 4);
             string figure = comboBox1.Text;
             string color = comboBox2.Text;
@@ -122,8 +122,37 @@ namespace WindowsFormsApp3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Graphics g = panel1.CreateGraphics();
+            Graphics g = pictureBox1.CreateGraphics();
             g.Clear(Color.White);
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null) 
+            {
+ 
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Title = "Сохранить картинку как...";
+  
+                savedialog.OverwritePrompt = true;
+         
+                savedialog.CheckPathExists = true;
+    
+                savedialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
+
+                savedialog.ShowHelp = true;
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        pictureBox1.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Невозможно сохранить изображение", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
