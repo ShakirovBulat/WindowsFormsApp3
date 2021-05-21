@@ -26,6 +26,10 @@ namespace WindowsFormsApp3
             string figure = comboBox1.Text;
             string color = comboBox2.Text;
             string thickness = comboBox3.Text;
+            if (color == "Yellow")
+            {
+                pen = new Pen(Color.Yellow, 4);
+            }
             if (color == "Yellow" && thickness == "4")
             {
                 pen = new Pen(Color.Yellow, 4);
@@ -37,6 +41,10 @@ namespace WindowsFormsApp3
             if (color == "Yellow" && thickness == "6")
             {
                 pen = new Pen(Color.Yellow, 6);
+            }
+            if (color == "Black")
+            {
+                pen = new Pen(Color.Black, 4);
             }
             if (color == "Black" && thickness == "4")
             {
@@ -50,6 +58,10 @@ namespace WindowsFormsApp3
             {
                 pen = new Pen(Color.Black, 6);
             }
+            if (color == "Pink")
+            {
+                pen = new Pen(Color.Pink, 4);
+            }
             if (color == "Pink" && thickness == "4")
             {
                 pen = new Pen(Color.Pink, 4);
@@ -61,6 +73,10 @@ namespace WindowsFormsApp3
             if (color == "Pink" && thickness == "6")
             {
                 pen = new Pen(Color.Pink, 6);
+            }
+            if (color == "Orange")
+            {
+                pen = new Pen(Color.Orange, 4);
             }
             if (color == "Orange" && thickness == "4")
             {
@@ -74,6 +90,10 @@ namespace WindowsFormsApp3
             {
                 pen = new Pen(Color.Orange, 6);
             }
+            if (color == "Blue")
+            {
+                pen = new Pen(Color.Blue, 4);
+            }
             if (color == "Blue" && thickness == "4")
             {
                 pen = new Pen(Color.Blue, 4);
@@ -85,6 +105,10 @@ namespace WindowsFormsApp3
             if (color == "Blue" && thickness == "6")
             {
                 pen = new Pen(Color.Blue, 6);
+            }
+            if (color == "Red")
+            {
+                pen = new Pen(Color.Red, 4);
             }
             if (color == "Red" && thickness == "4")
             {
@@ -139,6 +163,31 @@ namespace WindowsFormsApp3
                 catch
                 {
                     MessageBox.Show("Не тот файл!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(pictureBox1.Image != null)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Title = "Как ты ее хочешь сохранить а?";
+                sfd.OverwritePrompt = true;
+                sfd.CheckPathExists = true;
+                sfd.Filter = "Image Files(*.BMP)|*.BMP| Image Files(*.JPG)|*.JPG| Image Files(*.GIF)|*.GIF| Image Files(*.PNG)|*.PNG| All files (*.*)|*.*";
+                sfd.ShowHelp = true;
+
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        pictureBox1.Image.Save(sfd.FileName);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("что-то пошло не так!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
