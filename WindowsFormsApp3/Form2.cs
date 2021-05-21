@@ -125,32 +125,20 @@ namespace WindowsFormsApp3
             Graphics g = pictureBox1.CreateGraphics();
             g.Clear(Color.White);
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image != null) 
-            {
- 
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Title = "Сохранить картинку как...";
-  
-                savedialog.OverwritePrompt = true;
-         
-                savedialog.CheckPathExists = true;
-    
-                savedialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
+            OpenFileDialog ofd = new OpenFileDialog();
 
-                savedialog.ShowHelp = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
+            ofd.Filter = "Image Files(*.BMP; *.JPG; *.GIF; *.PNG)| *.BMP; *.JPG; *.GIF; *.PNG| All files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
-                    try
-                    {
-                        pictureBox1.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Невозможно сохранить изображение", "Ошибка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    pictureBox1.Image = new Bitmap(ofd.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Не тот файл!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

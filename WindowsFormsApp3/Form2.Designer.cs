@@ -133,13 +133,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(715, 3);
+            this.button3.Location = new System.Drawing.Point(576, 22);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(128, 37);
             this.button3.TabIndex = 10;
-            this.button3.Text = "Сохрани!";
+            this.button3.Text = "Загрузи!";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnSave_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox1
             // 
@@ -147,6 +147,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(12, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(767, 364);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
