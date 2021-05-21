@@ -191,5 +191,10 @@ namespace WindowsFormsApp3
                 }
             }
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Graphics g = pictureBox1.CreateGraphics();
+            g.Clear(Color.White);
+        }
     }
 }
