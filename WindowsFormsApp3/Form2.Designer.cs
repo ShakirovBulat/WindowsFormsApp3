@@ -40,7 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +216,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
