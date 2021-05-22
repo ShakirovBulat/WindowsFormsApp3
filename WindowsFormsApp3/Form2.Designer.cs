@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(268, 25);
+            this.button1.Location = new System.Drawing.Point(234, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 37);
             this.button1.TabIndex = 3;
@@ -68,7 +69,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(402, 25);
+            this.button2.Location = new System.Drawing.Point(234, 55);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 37);
             this.button2.TabIndex = 4;
@@ -135,7 +136,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(536, 12);
+            this.button3.Location = new System.Drawing.Point(378, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 37);
             this.button3.TabIndex = 10;
@@ -152,10 +153,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(536, 49);
+            this.button4.Location = new System.Drawing.Point(378, 58);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 36);
             this.button4.TabIndex = 12;
@@ -165,11 +169,11 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(671, 25);
+            this.button5.Location = new System.Drawing.Point(512, 37);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 37);
             this.button5.TabIndex = 13;
-            this.button5.Text = "Новый Рисунок";
+            this.button5.Text = "Кисточка!";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -213,5 +217,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

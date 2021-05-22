@@ -169,7 +169,7 @@ namespace WindowsFormsApp3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(pictureBox1.Image != null)
+            if (pictureBox1.Image != null)
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Title = "Как ты ее хочешь сохранить а?";
@@ -178,7 +178,7 @@ namespace WindowsFormsApp3
                 sfd.Filter = "Image Files(*.BMP)|*.BMP| Image Files(*.JPG)|*.JPG| Image Files(*.GIF)|*.GIF| Image Files(*.PNG)|*.PNG| All files (*.*)|*.*";
                 sfd.ShowHelp = true;
 
-                if(sfd.ShowDialog() == DialogResult.OK)
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
@@ -193,8 +193,28 @@ namespace WindowsFormsApp3
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            Graphics g = pictureBox1.CreateGraphics();
-            g.Clear(Color.White);
+            Graphics gph = pictureBox1.CreateGraphics();
+            gph.Clear(SystemColors.Window);
+        }
+
+            bool Drow;
+            private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Graphics graf = pictureBox1.CreateGraphics();
+            if (Drow == true)
+            {
+                graf.FillEllipse(Brushes.Black, e.X, e.Y, 3, 3);
+            }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Drow = true;
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            Drow = false;
         }
     }
 }
