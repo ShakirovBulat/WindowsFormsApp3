@@ -201,9 +201,34 @@ namespace WindowsFormsApp3
             private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             Graphics graf = pictureBox1.CreateGraphics();
+            string color = comboBox2.Text;
             if (Drow == true)
             {
                 graf.FillEllipse(Brushes.Black, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Black")
+            {
+                graf.FillEllipse(Brushes.Black, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Yellow")
+            {
+                graf.FillEllipse(Brushes.Yellow, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Pink")
+            {
+                graf.FillEllipse(Brushes.Pink, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Red")
+            {
+                graf.FillEllipse(Brushes.Red, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Blue")
+            {
+                graf.FillEllipse(Brushes.Blue, e.X, e.Y, 3, 3);
+            }
+            if (Drow == true && color == "Orange")
+            {
+                graf.FillEllipse(Brushes.Orange, e.X, e.Y, 3, 3);
             }
         }
 
