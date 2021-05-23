@@ -21,107 +21,12 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var graphics = pictureBox1.CreateGraphics();
-            var pen = new Pen(Color.Blue, 4);
             string figure = comboBox1.Text;
             string color = comboBox2.Text;
             string thickness = comboBox3.Text;
-            if (color == "Yellow")
-            {
-                pen = new Pen(Color.Yellow, 4);
-            }
-            if (color == "Yellow" && thickness == "4")
-            {
-                pen = new Pen(Color.Yellow, 4);
-            }
-            if (color == "Yellow" && thickness == "5")
-            {
-                pen = new Pen(Color.Yellow, 5);
-            }
-            if (color == "Yellow" && thickness == "6")
-            {
-                pen = new Pen(Color.Yellow, 6);
-            }
-            if (color == "Black")
-            {
-                pen = new Pen(Color.Black, 4);
-            }
-            if (color == "Black" && thickness == "4")
-            {
-                pen = new Pen(Color.Black, 4);
-            }
-            if (color == "Black" && thickness == "5")
-            {
-                pen = new Pen(Color.Black, 5);
-            }
-            if (color == "Black" && thickness == "6")
-            {
-                pen = new Pen(Color.Black, 6);
-            }
-            if (color == "Pink")
-            {
-                pen = new Pen(Color.Pink, 4);
-            }
-            if (color == "Pink" && thickness == "4")
-            {
-                pen = new Pen(Color.Pink, 4);
-            }
-            if (color == "Pink" && thickness == "5")
-            {
-                pen = new Pen(Color.Pink, 5);
-            }
-            if (color == "Pink" && thickness == "6")
-            {
-                pen = new Pen(Color.Pink, 6);
-            }
-            if (color == "Orange")
-            {
-                pen = new Pen(Color.Orange, 4);
-            }
-            if (color == "Orange" && thickness == "4")
-            {
-                pen = new Pen(Color.Orange, 4);
-            }
-            if (color == "Orange" && thickness == "5")
-            {
-                pen = new Pen(Color.Orange, 5);
-            }
-            if (color == "Orange" && thickness == "6")
-            {
-                pen = new Pen(Color.Orange, 6);
-            }
-            if (color == "Blue")
-            {
-                pen = new Pen(Color.Blue, 4);
-            }
-            if (color == "Blue" && thickness == "4")
-            {
-                pen = new Pen(Color.Blue, 4);
-            }
-            if (color == "Blue" && thickness == "5")
-            {
-                pen = new Pen(Color.Blue, 5);
-            }
-            if (color == "Blue" && thickness == "6")
-            {
-                pen = new Pen(Color.Blue, 6);
-            }
-            if (color == "Red")
-            {
-                pen = new Pen(Color.Red, 4);
-            }
-            if (color == "Red" && thickness == "4")
-            {
-                pen = new Pen(Color.Red, 4);
-            }
-            if (color == "Red" && thickness == "5")
-            {
-                pen = new Pen(Color.Red, 5);
-            }
-            if (color == "Red" && thickness == "6")
-            {
-                pen = new Pen(Color.Red, 6);
-            }
+            float b = float.Parse(thickness);
+            var graphics = pictureBox1.CreateGraphics();
+            var pen = new Pen(Color.FromName(color), b);
             if (figure == "Line")
             {
                 graphics.DrawLine(pen, new Point(1, 1), new Point(100, 100));
