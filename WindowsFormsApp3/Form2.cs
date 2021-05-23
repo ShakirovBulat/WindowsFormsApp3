@@ -24,7 +24,15 @@ namespace WindowsFormsApp3
             string figure = comboBox1.Text;
             string color = comboBox2.Text;
             string thickness = comboBox3.Text;
-            float b = float.Parse(thickness);
+            float b = 0;
+            try
+            {
+                b = float.Parse(thickness);
+            }
+            catch
+            {
+                MessageBox.Show("Не задан размер шрифта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             var graphics = pictureBox1.CreateGraphics();
             var pen = new Pen(Color.FromName(color), b);
             if (figure == "Line")
