@@ -136,7 +136,6 @@ namespace WindowsFormsApp3
 
         private void button6_Click(object sender, System.EventArgs e)
         {
-
             ColorDialog MyDialog = new ColorDialog();   
             MyDialog.AllowFullOpen = false;
             MyDialog.ShowHelp = true;
