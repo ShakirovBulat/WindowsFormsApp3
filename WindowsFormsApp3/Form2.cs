@@ -22,8 +22,8 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             string figure = comboBox1.Text;
-            string color = comboBox2.Text;
             string thickness = comboBox3.Text;
+            
             float b = 0;
             try
             {
@@ -34,7 +34,11 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Не задан размер шрифта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             var graphics = pictureBox1.CreateGraphics();
-            var pen = new Pen(Color.FromName(color), b);
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.AllowFullOpen = false;
+            MyDialog.ShowHelp = true;
+            MyDialog.Color = pictureBox1.ForeColor;
+            var pen = new Pen(MyDialog.Color, b);
             if (figure == "Line")
             {
                 graphics.DrawLine(pen, new Point(1, 1), new Point(100, 100));
@@ -119,30 +123,6 @@ namespace WindowsFormsApp3
             {
                 graf.FillEllipse(Brushes.Black, e.X, e.Y, 3, 3);
             }
-            if (Drow == true && color == "Black")
-            {
-                graf.FillEllipse(Brushes.Black, e.X, e.Y, 3, 3);
-            }
-            if (Drow == true && color == "Yellow")
-            {
-                graf.FillEllipse(Brushes.Yellow, e.X, e.Y, 3, 3);
-            }
-            if (Drow == true && color == "Pink")
-            {
-                graf.FillEllipse(Brushes.Pink, e.X, e.Y, 3, 3);
-            }
-            if (Drow == true && color == "Red")
-            {
-                graf.FillEllipse(Brushes.Red, e.X, e.Y, 3, 3);
-            }
-            if (Drow == true && color == "Blue")
-            {
-                graf.FillEllipse(Brushes.Blue, e.X, e.Y, 3, 3);
-            }
-            if (Drow == true && color == "Orange")
-            {
-                graf.FillEllipse(Brushes.Orange, e.X, e.Y, 3, 3);
-            }
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -153,6 +133,17 @@ namespace WindowsFormsApp3
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             Drow = false;
+        }
+
+        private void button6_Click(object sender, System.EventArgs e)
+        {
+
+            ColorDialog MyDialog = new ColorDialog();   
+            MyDialog.AllowFullOpen = false;
+            MyDialog.ShowHelp = true;
+            MyDialog.Color = pictureBox1.ForeColor;
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                pictureBox1.ForeColor = MyDialog.Color;
         }
     }
 }
